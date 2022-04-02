@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<products>
+
+  <product>
+ The design Architecture of laravel build on ........
+    <id>MVC</id>
+    <name>MVVM</name>
+    <price>MVP</price>
+    <quantity>Solid</quantity>
+  </product>
+  
+  <product>
+ Laravel is a farmework of ................
+    <id>php</id>
+    <name>c#</name>
+    <price>python</price>
+    <quantity>javascript</quantity>
+  </product>
+
+  <product>
+ .......... is used to install packages in laravel
+    <id>composer</id>
+    <name>npm</name>
+    <price>rost</price>
+    <quantity>dire</quantity>
+  </product>
+
+  <product>
+......... is one of the directive in laravel
+    <id>@yield</id>
+    <name>@section</name>
+    <price>@error</price>
+    <quantity>@end</quantity>
+  </product>
+</products>

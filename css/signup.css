@@ -1,0 +1,93 @@
+.form_container{
+    width: 50%;
+    height: 350px;
+    margin: 90px auto;
+    position: relative;
+    padding-bottom: 20px;
+    border-radius:20px;
+    background-color: #224bcf;
+}
+.form_registe{
+    width: 100%;
+    margin: 0px auto;
+    padding: 30px 0px;
+    position: absolute;
+    
+}
+
+.input_field{
+    margin-left: 14%;
+}
+
+.form_registe input{
+margin: 7px auto;
+padding: 10px 5px;
+width: 90%;
+
+}
+.form_registe .row{
+    margin-left: 10.3%;
+}
+
+.form_registe .row .col_half{
+
+    display: inline-block;
+    
+    margin:0px;
+
+}
+
+
+.form_registe input[type=radio]{
+    width: 5%;
+    margin: 10px 1px;
+cursor: pointer;
+}
+.form_registe input[type=submit]{
+
+    cursor: pointer;
+    background-color: aquamarine;
+    transition: all .3s;
+    margin-left: 5%;
+}
+.radio_option label{
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.form_registe input[type=submit]:hover{
+
+    background-color: rgb(245, 29, 198);
+    
+}
+
+ul{
+    margin:  20px;
+}
+.danger{
+    background-color: rgb(238, 104, 104);
+    padding: 3px;
+    margin-top: 5px;
+    width: 500px;
+    font-size: 15px;
+    list-style: none;
+
+}
+.sucess{
+    background-color: rgb(42, 248, 76);
+    padding: 3px;
+    margin-top: 5px;
+    width: 500px;
+    font-size: 15px;
+    list-style: none;
+
+}
+.error{
+    font-size: 20px;
+    margin: 20px;
+    background-color: rgb(253, 109, 109);
+    width: 230px;
+    text-align: center;
+    text-transform: lowercase;
+
+}

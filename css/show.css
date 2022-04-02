@@ -1,0 +1,108 @@
+
+.images_contain{
+    width: 100%;
+    height: 300px;
+  
+    background-color: #302851;
+  }
+  
+  .imag_contain .course{
+    width: 600px !important;
+    
+  }
+
+  .contain_description{
+    padding-top: 20px;
+    width: 100%;
+
+    background-color:#224bcf;
+  }
+
+  .contain_description .container {
+     width: 80%;
+     margin-left: 40px;
+  }
+  .contain_description div{
+ 
+    margin-bottom: 10px;
+    color: white;
+  }
+  .contain_description span{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .contain_description p{
+
+    font-size: 18px;
+  }
+  .contain_lessons {
+    display: flex ;
+    flex-wrap: wrap;
+
+  }
+
+  
+  .contain_lessons div{
+    margin-left: 5px;
+    
+  }
+
+/* section of question */
+
+.header_course{
+  margin: 20px auto;
+  width: 50%;
+  
+}
+.header_course h2{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+  .question{
+    width: 30%;
+    margin:  30px auto;
+    background-color: #224bcf ;
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 18px;
+    transition: all .2s linear;
+
+}
+
+.question:hover{
+
+  transform: scale(1.1,1.1);
+
+}
+  .question a{
+     color: white;
+  } 
+ 
+.question:hover a{
+  color: #fa1d86;
+  }
+.contain_ques label:first-of-type{
+  margin-left: 0px !important;
+}
+
+.contain_ques{
+
+  margin: 30px !important;
+}
+
+
+.contain_ques .container{
+
+padding: 10px 0px;
+
+}
+.contain_ques .container p{
+
+  font-size: 20px;
+}
+.contain_ques .container label{
+  padding: 20px 0px;
+  font-size: 15px;
+}
