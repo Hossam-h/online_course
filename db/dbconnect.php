@@ -64,7 +64,7 @@ function select($table,$id){
 
 
 
-function selectall($table,$id1 ,$id2){
+function selectall($table,$id1,$id2){
 
     global $connection;
 

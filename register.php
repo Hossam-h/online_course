@@ -35,7 +35,11 @@ if( strlen(trim(str_replace(' ','',$fname)))<3 ){
 
   $_SESSION['erors'][]='the email is small';
 
-}if(!isset($_POST['radies'])){
+}elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+
+  $_SESSION['erors'][]='the email not valid';
+
+} if(!isset($_POST['radies'])){
     $_SESSION['erors'][]='the type is required';
   }else{
     $rad= $_POST["radies"];
@@ -54,19 +58,14 @@ if(empty($_SESSION['erors'])){
   db_inser($quer);
 
   $_SESSION['sucess'][]='joined is successed';
+  $_SESSION['register']= $fname.' '.$lname;
 
-  header('Location:http://127.0.0.1/online_education/join_us.php');
+  header('Location:http://127.0.0.1/online_education/index.php');
   
 }else{
   header('Location:http://127.0.0.1/online_education/join_us.php');
 
 }
-
-
-
-
-
-
 
 
 

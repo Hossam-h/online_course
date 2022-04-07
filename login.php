@@ -1,16 +1,12 @@
 <?php
 session_start();
-
-
 ?>
 
 <?php 
 require_once './db/dbconnect.php';
-
 $courses=getrow_all('coursee');
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,6 +47,7 @@ $courses=getrow_all('coursee');
            
             <li><a href="contact.php">contact</a></li>
             <li><a href="join_us.php">Join US</a></li>
+
             <li><a href="login.php">login</a></li>
         </ul>
     </nav>
@@ -70,104 +67,31 @@ $courses=getrow_all('coursee');
 
   <?php } ?>
 
-
   
-  <?php if (isset( $_SESSION['sucess'])) { ?>
-    <ul>
-      <?php foreach ($_SESSION['sucess'] as $success) { ?>
-
-
-        <li class="sucess"><?= $success ?></li>
-      <?php } ?>
-
-    </ul>
-
-  <?php } ?>
-
-
   <div id="rep" class="error">  </div>
+
+ 
 
   <div class="form_container">
 
     <div class="">
-      <form method="POST" action="./register.php" class="form_registe">
+      <form method="POST" action="./login_validate.php" class="form_registe" >
         <div class="input_field">
           <input type="email" name="email" id="email_validate" placeholder="Email" />
         </div>
         <div class="input_field">
           <input type="password" name="password" placeholder="Password" />
         </div>
-        <div class="input_field">
-          <input type="password" name="password" placeholder="Re-type Password" />
-        </div>
+      
+      
 
-        <div class="row clearfix">
-          <div class="col_half">
-            <div class="input_field">
-              <input type="text" name="fname" placeholder="First Name" />
-            </div>
-          </div>
-          <div class="col_half">
-            <div class="input_field">
-              <input type="text" name="lname" placeholder="Last Name" />
-            </div>
-          </div>
-        </div>
-
-        <div class="input_field radio_option">
-
-          <input type="radio" name="radies" value="teacher" id="rd1" />
-
-          <label for="rd1">teacher</label>
-          <input type="radio" name="radies" value="student" id="rd2" />
-
-          <label for="rd2">student</label>
-        </div>
-
-
-        <input class="button" type="submit" name="submit" value="Register" />
+        <input class="button" type="submit" name="submit" style="width: 200px; margin-left:35%" value="login" />
       </form>
     </div>
 
   </div>
 
   
-<script>
-
-let email_val= document.getElementById('email_validate');
-let mydiv= document.getElementById('rep');
-
-
-email_val.addEventListener("blur", () => {
-
-  let myRequest = new XMLHttpRequest();
-  let email= email_val.value
-
- myRequest.onreadystatechange = function () {
-   if(email == ''){
-
-    mydiv.innerHTML = myRequest.responseText;
-   
-   }else{
-    mydiv.innerHTML='';
-   }
-
-  };
-
-  myRequest.open("POST", "info.php", true);
-  myRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded")
-  myRequest.send('email='+email);
-
-});
-
-
-</script>
-</body>
-
-</html>
-
-<?php require_once('./footer.php') ?>
-
 <?php
 session_unset();
 

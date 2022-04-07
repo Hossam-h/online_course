@@ -3,6 +3,8 @@ require_once './db/dbconnect.php';
 
 $courses=getrow_all('coursee');
 
+session_start();
+
 
 ?>
 <!DOCTYPE html>
@@ -44,7 +46,20 @@ $courses=getrow_all('coursee');
             </li>
            
             <li><a href="contact.php">contact</a></li>
+            <?php if(!isset($_SESSION['register']))   {?>
+   
             <li><a href="join_us.php">Join US</a></li>
+            <li><a href="login.php">login</a></li>
+
+            <?php } ?>
+         
+
+            <?php if(isset($_SESSION['register']))   {?>
+   
+    <li> <h2> <?= 'Hello '. $_SESSION['register'] ?> </h2> </li>
+   
+   <?php } ?>
+
         </ul>
     </nav>
 
