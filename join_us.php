@@ -98,7 +98,7 @@ $courses=getrow_all('coursee');
           <input type="password" name="password" placeholder="Password" />
         </div>
         <div class="input_field">
-          <input type="password" name="password" placeholder="Re-type Password" />
+          <input type="password" name="re_password" placeholder="Re-type Password" />
         </div>
 
         <div class="row clearfix">

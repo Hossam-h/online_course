@@ -806,6 +806,63 @@ section {
     font-size: 50%;
   }
 }
+
+.header_about {
+  width: 100%;
+  padding: 10px;
+}
+.header_about h2{
+  text-align: center;
+  font-size: 30px;
+}
+table{
+  width: 90%;
+  margin-left: 4%;
+  border-collapse: collapse;
+
+  
+}
+table th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  /* text-align: left; */
+  margin-left: 10px;
+  font-size: 20px;
+  background-color: #04AA6D;
+  color: white;
+
+}
+
+table td{
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+  margin-left: 4px;
+}
+table,th,td {
+  border: 1px solid;
+}
+
+.co_sub{
+  width: 100%;
+  padding: 5px;
+}
+
+.co_sub input{
+  width: 200px;
+  padding: 5px;
+  margin-left: 40%;
+  background-color: #224bcf;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all .5s;
+}
+
+
+.co_sub input:hover{
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */
 
 

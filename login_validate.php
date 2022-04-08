@@ -5,12 +5,7 @@ require_once "./db/dbconnect.php";
 
 session_start();
 
-
-
-
 $_SESSION['erors']=[];
-
-
   $pass= $_POST['password'];
   $email = $_POST['email'];
   

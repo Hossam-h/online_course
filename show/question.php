@@ -4,7 +4,6 @@ $xml = simplexml_load_file("ques.xml");
 
 require_once '../db/dbconnect.php';
 
-$id_course= $_GET['id'];
 $row = select('coursee', $_GET['id']);
 
 $row_qus = selectall('questions', $row['id'], 'course_id');
@@ -63,15 +62,15 @@ $courses = getrow_all('coursee');
                         <li><a href="about.php">about</a></li>
                         <li><a href="#">courses +</a>
                             <ul>
-                            <?php foreach ($courses as $course) { ?>
+                                <?php foreach ($courses as $course) { ?>
 
-<li><a href="./show.php?id=<?= $course['id'] ?>"><?= $course['course_name'] ?></a></li>
+                                    <li><a href="./show.php?id=<?= $course['id'] ?>"><?= $course['course_name'] ?></a></li>
 
-<?php } ?>
+                                <?php } ?>
 
                             </ul>
                         </li>
-                        
+
                         <li><a href="../contact.php">contact</a></li>
                     </ul>
                 </nav>
@@ -89,131 +88,139 @@ $courses = getrow_all('coursee');
                 <h2>Answer the question of <?= $row['course_name'] ?></h2>
             </div>
 
-         <form action="">
-            <div class="contain_ques">
-                <?php $i = 0 ?>
-                <?php foreach ($xml->children() as $child1) { ?>
+            <form action="./degree.php?id=<?= $_GET['id'] ?>" method="POST">
+
+                <div class="contain_ques">
+                    <?php $i = 0 ?>
+                    <?php foreach ($xml->children() as $child1) { ?>
+                        <div class="container">
+                            <p><?= $child1 ?></p>
+                            <?php foreach ($child1->children() as $child2) { ?>
+                                <input type="radio" class="lableques" name="rad<?= $i ?>" style="margin-left: 50px;" value="<?php echo  $child2  ?>">
+                                <label for=""> <?php echo  $child2  ?> </label>
+
+                            <?php } ?>
+                        </div>
+                        <?php $i++ ?>
+                    <?php } ?>
+
                     <div class="container">
-                        <p><?= $child1 ?></p>
-                        <?php foreach ($child1->children() as $child2) { ?>
-                            <input type="radio" class="lableques" name="rad<?= $i ?>" style="margin-left: 50px;" value="<?php echo  $child2  ?>">
-                            <label for=""> <?php echo  $child2  ?> </label>
+                        <p> to drop table in databse write ........... </p>
+                        <input type="radio" class="lableques" name="radv" style="margin-left: 50px;" value="dsfsd">
+                        <label for=""> php artisan migrate </label>
 
-                        <?php } ?>
-                    </div>
-                    <?php $i++ ?>
-                <?php } ?>
+                        <input type="radio" class="lableques" name="radv" style="margin-left: 50px;" value="dsfsd">
+                        <label for=""> php artisan make:model </label>
 
-                <div class="container">
-                    <p> to drop table in databse write ........... </p>
-                    <input type="radio" class="lableques" name="radv" style="margin-left: 50px;" value="dsfsd">
-                    <label for=""> php artisan migrate </label>
+                        <input type="radio" class="lableques" name="radv" style="margin-left: 50px;" value="dsfsd">
+                        <label for=""> php artisan make:controller </label>
 
-                    <input type="radio" class="lableques" name="radv" style="margin-left: 50px;" value="dsfsd">
-                    <label for=""> php artisan make:model </label>
-
-                    <input type="radio" class="lableques" name="radv" style="margin-left: 50px;" value="dsfsd">
-                    <label for=""> php artisan make:controller </label>
-
-                </div>
-
-
-                <div class="container">
-                    <p> query builder to get all data from database is .........</p>
-                    <input type="radio" class="lableques" name="radf" style="margin-left: 50px;" value="Model_name::all()">
-                    <label for="">Model_name::all()</label>
-
-                    <input type="radio" class="lableques" name="radf" style="margin-left: 50px;" value="Model_name::where('id',1)">
-                    <label for=""> Model_name::where('id',1)</label>
-
-                    <input type="radio" class="lableques" name="radf" style="margin-left: 50px;" value="Model_name::find(1)">
-                    <label for=""> Model_name::find(1)</label>
-
-                </div>
-
-
-                <div class="container">
-                    <p> this query table_name::find(1) return ..............</p>
-                    <input type="radio" class="lableques" name="rade" style="margin-left: 50px;" value="dsfsd">
-                    <label for="">return Object</label>
-
-                    <input type="radio" class="lableques" name="rade" style="margin-left: 50px;" value="dsfsd">
-                    <label for=""> return collesion </label>
-
-                    <input type="radio" class="lableques" name="rade" style="margin-left: 50px;" value="dsfsd">
-                    <label for=""> return true </label>
-
-                </div>
-
-
-                <?php $i = 6 ?>
-
-                <?php foreach ($row_qus as $row) { ?>
-                    <div class="container">
-                        <p><?= $row['question_name'] ?></p>
-
-
-
-                        <?php
-
-                        $row_answer = selectall('answer', 'ques_id', $row['id']);
-
-                        foreach ($row_answer as $answer) {
-
-                        ?>
-                            <input type="radio" class="lableques" name="rad<?= $i ?>" style="margin-left: 50px;" value="dsfsd">
-                            <label for=""><?= $answer['Answers'] ?></label>
-
-                        <?php } ?>
                     </div>
 
-                    <?php $i++ ?>
-                <?php } ?>
 
-            </div>
+                    <div class="container">
+                        <p> query builder to get all data from database is .........</p>
+                        <input type="radio" class="lableques" name="radf" style="margin-left: 50px;" value="Model_name::all()">
+                        <label for="">Model_name::all()</label>
 
-            <input type="submit">
-        </form>
+                        <input type="radio" class="lableques" name="radf" style="margin-left: 50px;" value="Model_name::where('id',1)">
+                        <label for=""> Model_name::where('id',1)</label>
+
+                        <input type="radio" class="lableques" name="radf" style="margin-left: 50px;" value="Model_name::find(1)">
+                        <label for=""> Model_name::find(1)</label>
+
+                    </div>
+
+
+                    <div class="container">
+                        <p> this query table_name::find(1) return ..............</p>
+                        <input type="radio" class="lableques" name="rade" style="margin-left: 50px;" value="dsfsd">
+                        <label for="">return Object</label>
+
+                        <input type="radio" class="lableques" name="rade" style="margin-left: 50px;" value="dsfsd">
+                        <label for=""> return collesion </label>
+
+                        <input type="radio" class="lableques" name="rade" style="margin-left: 50px;" value="dsfsd">
+                        <label for=""> return true </label>
+
+                    </div>
+
+
+                    <?php $i = 6 ?>
+
+                    <?php foreach ($row_qus as $row) { ?>
+                        <div class="container">
+                            <p><?= $row['question_name'] ?></p>
+
+
+
+                            <?php
+
+                            $row_answer = selectall('answer', 'ques_id', $row['id']);
+
+                            foreach ($row_answer as $answer) {
+
+                            ?>
+                                <input type="radio" class="lableques" name="rad<?= $i ?>" style="margin-left: 50px;" value="dsfsd">
+                                <label for=""><?= $answer['Answers'] ?></label>
+
+                            <?php } ?>
+                        </div>
+
+                        <?php $i++ ?>
+                    <?php } ?>
+
+                </div>
+<div class="co_sub">
+
+<input type="submit" class="submit" value="Subimt your Answer">
+
+</div>
+    
+            </form>
         </body>
 
-        
+
 </html>
+
+
+
 
 <section class="footer">
 
-<div class="box-container">
+    <div class="box-container">
 
-    <div class="box">
-        <h3>explore</h3>
-        <a href="index.php"> <i class="fas fa-arrow-right"></i> home </a>
-        <a href="about.php"> <i class="fas fa-arrow-right"></i> about </a>
-        <a href="contact.php"> <i class="fas fa-arrow-right"></i> contact </a>
+        <div class="box">
+            <h3>explore</h3>
+            <a href="index.php"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="about.php"> <i class="fas fa-arrow-right"></i> about </a>
+            <a href="contact.php"> <i class="fas fa-arrow-right"></i> contact </a>
+        </div>
+
+        <div class="box">
+            <h3>categories</h3>
+
+
+
+            <?php foreach ($courses as $course) { ?>
+
+                <a href="./show/show.php?id=<?= $course['id'] ?>"><i class="fas fa-arrow-right"></i> <?= $course['course_name'] ?></a>
+
+            <?php } ?>
+
+        </div>
+
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+
+        </div>
+
     </div>
-
-    <div class="box">
-        <h3>categories</h3>
-
-
-        
-        <?php foreach($courses as $course)  {?>
-
-<a href="./show/show.php?id=<?= $course['id'] ?>"><i class="fas fa-arrow-right"></i> <?=$course['course_name']?></a>
-
-<?php } ?>
-        
-    </div>
-
-    
-    <div class="box">
-        <h3>follow us</h3>
-        <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
-        <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-        <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
-        <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
-        
-    </div>
-
-</div>
 
 
 </section>
@@ -224,4 +231,5 @@ $courses = getrow_all('coursee');
 <script src="js/script.js"></script>
 
 </body>
+
 </html>

@@ -12,6 +12,7 @@ $_SESSION['erors']=[];
   $lname =$_POST['lname'];
   $pass= $_POST['password'];
   $email= $_POST['email'];
+  $re_pass=$_POST['re_password'];
  
 
 
@@ -26,6 +27,10 @@ if( strlen(trim(str_replace(' ','',$fname)))<3 ){
 }if( strlen(trim(str_replace(' ','',$lname)))<3 ){
   
   $_SESSION['erors'][]='the lastname name is small';
+
+}if($re_pass != $pass){
+
+  $_SESSION['erors'][]='password not match';
 
 }if( strlen(trim(str_replace(' ','',$pass)))<5 ){
 

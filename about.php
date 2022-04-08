@@ -24,6 +24,39 @@
 
 </section>
 
+<div class="header_about">
+    <h2>Our Teachers</h2>
+</div>
+
+<div>
+
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Experience</th>
+        <th>field</th>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Hossam Ibrahim</td>
+            <td>10 Years</td>
+            <td>PHP</td>
+        </tr>
+        <tr>
+            <td>Ayman Khaled</td>
+            <td>5 Years</td>
+            <td>Laravel</td>
+        </tr>
+        <tr>
+            <td>Mostafa Saad</td>
+            <td>7 Years</td>
+            <td>Mysql</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
 <!-- about section ends -->
 
 
