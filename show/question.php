@@ -161,7 +161,7 @@ $courses = getrow_all('coursee');
                             foreach ($row_answer as $answer) {
 
                             ?>
-                                <input type="radio" class="lableques" name="rad<?= $i ?>" style="margin-left: 50px;" value="dsfsd">
+                                <input type="radio" class="lableques" name="rad<?= $i ?>" style="margin-left: 50px;" value="<?= $answer['Answers'] ?>">
                                 <label for=""><?= $answer['Answers'] ?></label>
 
                             <?php } ?>
